@@ -17,7 +17,7 @@ return function(sValue: string, sLine: number)
           local lidx = _:find("l", 1);
           if lidx then
               local line = r[lidx]
-              if line == -1 then;
+              if line == -1 then
                   r[lidx] = sLine;
               end;
           end;
