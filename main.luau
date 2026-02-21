@@ -1,5 +1,5 @@
 return function(sValue: string, sLine: number)
-  local old; old = hookfunction(debug.info, function(...)
+  local old; old = hookfunction(debug.info, newcclosure(function(...)
       local args = {...};
       local r = {old(...)};
       
@@ -24,5 +24,5 @@ return function(sValue: string, sLine: number)
       end;
       
       return unpack(r);
-  end);
+  end));
 end;
