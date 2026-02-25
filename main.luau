@@ -1,5 +1,7 @@
 return function(sValue: string, sLine: number)
   local old; old = hookfunction(debug.info, newcclosure(function(...)
+      if checkcaller and checkcaller() then return old(...); end;
+
       local args = {...};
       local r = {old(...)};
       
